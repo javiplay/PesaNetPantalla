@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="ServiciosPesaNET" elementFormDefault="qualified" targetNamespace="ServiciosPesaNET" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ComprobarProductor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="peticion" type="tns:PeticionParaComprobarProductor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PeticionParaComprobarProductor">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Codigo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Tag" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComprobarProductorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ComprobarProductorResult" type="tns:RespuestaDeComprobarProductor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RespuestaDeComprobarProductor">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Existe" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Productor" type="tns:ProductorWCF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Plantaciones" type="tns:ArrayOfPlantacionWCF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Medianerias" type="tns:ArrayOfMedianeriaWCF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Vehiculos" type="tns:ArrayOfVehiculoWCF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductorWCF">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Apellidos" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NIF" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPlantacionWCF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlantacionWCF" nillable="true" type="tns:PlantacionWCF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PlantacionWCF">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Termino" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Codigo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Poligono" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Parcela" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMedianeriaWCF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MedianeriaWCF" nillable="true" type="tns:MedianeriaWCF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MedianeriaWCF">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfVehiculoWCF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehiculoWCF" nillable="true" type="tns:VehiculoWCF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VehiculoWCF">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

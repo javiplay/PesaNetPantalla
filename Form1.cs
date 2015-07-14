@@ -6,7 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using SolucionPesaNetPantalla.lenovo_pc;
+using SolucionPesaNetPantalla.ServiciosPesaNET;
 
 namespace SolucionPesaNetPantalla
 {
@@ -19,8 +19,18 @@ namespace SolucionPesaNetPantalla
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HelloWorldService serv = new HelloWorldService() { Url = "http://192.168.89.100:8000/Test" };
-            MessageBox.Show( serv.SayHello("Javier"));
+            //HelloWorldService serv = new HelloWorldService() { Url = "http://192.168.89.100:8000/Test" };
+            //MessageBox.Show( serv.SayHello("Javier"));
+
+            ServiciosDePantalla servicios = new ServiciosDePantalla() { Url = "http://192.168.89.100:8000/ServiciosPesaNET" };
+            PeticionParaComprobarProductor peticion = new PeticionParaComprobarProductor() { Codigo = 2 };
+            RespuestaDeComprobarProductor respuesta = servicios.ComprobarProductor(peticion);
+            if (respuesta.Existe)
+            {
+                MessageBox.Show(respuesta.Productor.Nombre+ " (" + respuesta.Plantaciones.Length + " plantaciones)");
+            }
+            
+
         }
     }
 }
