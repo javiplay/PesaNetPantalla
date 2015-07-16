@@ -57,25 +57,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Bienvenido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Bienvenido.Designer.cs">
+      <DependentUpon>Bienvenido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesandoPeticion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesandoPeticion.Designer.cs">
+      <DependentUpon>ProcesandoPeticion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Bienvenido.resx">
+      <DependentUpon>Bienvenido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesandoPeticion.resx">
+      <DependentUpon>ProcesandoPeticion.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TecladoNumerico.resx">
+      <DependentUpon>TecladoNumerico.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TecladoNumerico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TecladoNumerico.Designer.cs">
+      <DependentUpon>TecladoNumerico.cs</DependentUpon>
     </Compile>
     <Compile Include="Web References\ServiciosPesaNET\Reference.cs">
       <AutoGen>True</AutoGen>
