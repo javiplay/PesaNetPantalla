@@ -15,7 +15,20 @@ namespace SolucionPesaNetPantalla
     public partial class Bienvenido : Form
     {
         ServiciosDePantalla servicios = new ServiciosDePantalla() { Url = "http://192.168.89.100:8000/ServiciosPesaNET" };
-        ProcesandoPeticion procesando = new ProcesandoPeticion();
+        private static PantallaProcesando _procesando = new PantallaProcesando();
+
+        public static PantallaProcesando Procesando
+        {
+            get { return Bienvenido._procesando; }
+            set { Bienvenido._procesando = value; }
+        }
+        private static PantallaSeleccion _seleccionando = new PantallaSeleccion();
+
+        public static PantallaSeleccion Seleccionando
+        {
+            get { return Bienvenido._seleccionando; }
+            set { Bienvenido._seleccionando = value; }
+        }
 
 
         public Bienvenido()
@@ -42,11 +55,12 @@ namespace SolucionPesaNetPantalla
                             tbCodigo.Text = string.Empty;
                         }
                         break;
+
                     case "Entrar":                       
                         PeticionParaComprobarProductor peticion = new PeticionParaComprobarProductor() { Codigo = int.Parse(tbCodigo.Text) };
-                        procesando.Limpiar();
-                        procesando.Show();
-                        AsyncCallback callback = new AsyncCallback(metodoRespuesta);
+                        Procesando.Limpiar();
+                        Procesando.Show();
+                        AsyncCallback callback = new AsyncCallback(CallbackComprobarProductor);
                         IAsyncResult ar = servicios.BeginComprobarProductor(peticion, callback, null);                     
                         break;
 
@@ -54,7 +68,6 @@ namespace SolucionPesaNetPantalla
                     default:
                         if (tbCodigo.Text.Length < 5)
                         {
-
                             tbCodigo.Text += b.Text;
                         }
 
@@ -69,41 +82,37 @@ namespace SolucionPesaNetPantalla
             MessageBox.Show(this.Width + "x" + this.Height);
         }
 
-        private void metodoRespuesta(IAsyncResult ar)
+        private void MostrarError(string error, string mensaje)
+        {
+            Procesando.Error = error;
+            Procesando.Mensaje = mensaje;
+            Thread.Sleep(3000);
+            
+            Procesando.Invoke((Action)(() => Procesando.Hide()));
+            tbCodigo.Invoke((Action)(() => tbCodigo.Text = ""));
+          
+        }
+
+        private void CallbackComprobarProductor(IAsyncResult ar)
         {
             try
             {
                 RespuestaDeComprobarProductor respuesta = servicios.EndComprobarProductor(ar);
                 if (respuesta.Existe)
                 {
-                    MessageBox.Show(respuesta.Productor.Nombre + " (" + respuesta.Plantaciones.Length + " plantaciones)");
+                    Seleccionando.Datos = respuesta;
+                    Seleccionando.Invoke((Action)(() => Seleccionando.Show()));
+                    Procesando.Invoke((Action)(() => Procesando.Hide()));
+                }
+                else
+                {
+                    MostrarError("Productor no encontrado.", "El código proporcionado no se encuentra registrado.");
                 }
             }
             catch (WebException e)
             {
-                procesando.Error = "Servidor no conectado.";
-                procesando.Mensaje = e.Message;
-                Thread.Sleep(2000);
-                if (procesando.InvokeRequired)
-                {
-                    procesando.Invoke((Action)(() => procesando.Hide()));
-                }
-                else
-                {
-                    procesando.Hide();
-                }
-
-
-                if (procesando.InvokeRequired)
-                {
-                    tbCodigo.Invoke((Action)(() => tbCodigo.Text = ""));
-                }
-                else
-                {
-                    tbCodigo.Text = "";
-                }
+                MostrarError("Servidor no conectado.", e.Message);
             }
-            
         }
     }
 }

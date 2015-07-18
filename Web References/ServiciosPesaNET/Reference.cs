@@ -95,6 +95,8 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
         
         private string nombreField;
         
+        private string mostrarField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<int> Id {
@@ -113,6 +115,16 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
             }
             set {
                 this.nombreField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Mostrar {
+            get {
+                return this.mostrarField;
+            }
+            set {
+                this.mostrarField = value;
             }
         }
     }
@@ -127,6 +139,8 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
         
         private string nombreField;
         
+        private string mostrarField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<int> Id {
@@ -145,6 +159,16 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
             }
             set {
                 this.nombreField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Mostrar {
+            get {
+                return this.mostrarField;
+            }
+            set {
+                this.mostrarField = value;
             }
         }
     }
@@ -166,6 +190,8 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
         private string poligonoField;
         
         private string parcelaField;
+        
+        private string mostrarField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
@@ -227,6 +253,16 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
                 this.parcelaField = value;
             }
         }
+        
+        /// <remarks/>
+        public string Mostrar {
+            get {
+                return this.mostrarField;
+            }
+            set {
+                this.mostrarField = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -244,6 +280,8 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
         private string apellidosField;
         
         private string nIFField;
+        
+        private string mostrarField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
@@ -293,6 +331,16 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
             }
             set {
                 this.nIFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Mostrar {
+            get {
+                return this.mostrarField;
+            }
+            set {
+                this.mostrarField = value;
             }
         }
     }

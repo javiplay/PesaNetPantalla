@@ -63,24 +63,28 @@
     <Compile Include="Bienvenido.Designer.cs">
       <DependentUpon>Bienvenido.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProcesandoPeticion.cs">
+    <Compile Include="PantallaProcesando.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProcesandoPeticion.Designer.cs">
-      <DependentUpon>ProcesandoPeticion.cs</DependentUpon>
+    <Compile Include="PantallaProcesando.Designer.cs">
+      <DependentUpon>PantallaProcesando.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bienvenido.resx">
       <DependentUpon>Bienvenido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProcesandoPeticion.resx">
-      <DependentUpon>ProcesandoPeticion.cs</DependentUpon>
+    <EmbeddedResource Include="PantallaProcesando.resx">
+      <DependentUpon>PantallaProcesando.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaSeleccion.resx">
+      <DependentUpon>PantallaSeleccion.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TecladoNumerico.resx">
@@ -90,6 +94,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaSeleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaSeleccion.Designer.cs">
+      <DependentUpon>PantallaSeleccion.cs</DependentUpon>
     </Compile>
     <Compile Include="TecladoNumerico.cs">
       <SubType>UserControl</SubType>

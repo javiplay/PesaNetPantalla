@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace SolucionPesaNetPantalla
 {
-    public partial class ProcesandoPeticion : Form
+    public partial class PantallaProcesando : Form
     {
-        public ProcesandoPeticion()
+        public PantallaProcesando()
         {
             InitializeComponent();
             lbError.Text = "";

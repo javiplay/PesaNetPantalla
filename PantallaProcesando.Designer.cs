@@ -1,6 +1,6 @@
 ﻿namespace SolucionPesaNetPantalla
 {
-    partial class ProcesandoPeticion
+    partial class PantallaProcesando
     {
         /// <summary>
         /// Required designer variable.
