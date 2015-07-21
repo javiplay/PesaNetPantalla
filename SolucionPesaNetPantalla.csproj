@@ -63,6 +63,24 @@
     <Compile Include="Bienvenido.Designer.cs">
       <DependentUpon>Bienvenido.cs</DependentUpon>
     </Compile>
+    <Compile Include="PantallaActualizando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaActualizando.Designer.cs">
+      <DependentUpon>PantallaActualizando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaConfirmacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaConfirmacion.Designer.cs">
+      <DependentUpon>PantallaConfirmacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaConfirmarDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaConfirmarDatos.Designer.cs">
+      <DependentUpon>PantallaConfirmarDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="PantallaProcesando.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +91,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bienvenido.resx">
       <DependentUpon>Bienvenido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaActualizando.resx">
+      <DependentUpon>PantallaActualizando.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaConfirmacion.resx">
+      <DependentUpon>PantallaConfirmacion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaConfirmarDatos.resx">
+      <DependentUpon>PantallaConfirmarDatos.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaProcesando.resx">
       <DependentUpon>PantallaProcesando.cs</DependentUpon>
@@ -142,6 +172,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\ServiciosPesaNET\RespuestaDeComprobarProductor.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ServiciosPesaNET\RespuestaDeIniciarProceso.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\ServiciosPesaNET\ServiciosPesaNET.disco" />

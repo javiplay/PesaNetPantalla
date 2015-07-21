@@ -11,10 +11,20 @@
   <wsdl:message name="IServiciosDePantalla_ComprobarProductor_OutputMessage">
     <wsdl:part name="parameters" element="tns:ComprobarProductorResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiciosDePantalla_IniciarProceso_InputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarProceso" />
+  </wsdl:message>
+  <wsdl:message name="IServiciosDePantalla_IniciarProceso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarProcesoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiciosDePantalla">
     <wsdl:operation name="ComprobarProductor">
       <wsdl:input wsam:Action="ServiciosPesaNET/IServiciosDePantalla/ComprobarProductor" message="tns:IServiciosDePantalla_ComprobarProductor_InputMessage" />
       <wsdl:output wsam:Action="ServiciosPesaNET/IServiciosDePantalla/ComprobarProductorResponse" message="tns:IServiciosDePantalla_ComprobarProductor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IniciarProceso">
+      <wsdl:input wsam:Action="ServiciosPesaNET/IServiciosDePantalla/IniciarProceso" message="tns:IServiciosDePantalla_IniciarProceso_InputMessage" />
+      <wsdl:output wsam:Action="ServiciosPesaNET/IServiciosDePantalla/IniciarProcesoResponse" message="tns:IServiciosDePantalla_IniciarProceso_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

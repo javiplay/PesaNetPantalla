@@ -14,7 +14,7 @@ namespace SolucionPesaNetPantalla
 {
     public partial class Bienvenido : Form
     {
-        ServiciosDePantalla servicios = new ServiciosDePantalla() { Url = "http://192.168.89.100:8000/ServiciosPesaNET" };
+        public static ServiciosDePantalla servicios = new ServiciosDePantalla() { Url = "http://192.168.89.100:8000/ServiciosPesaNET" };
         private static PantallaProcesando _procesando = new PantallaProcesando();
 
         public static PantallaProcesando Procesando
@@ -28,6 +28,14 @@ namespace SolucionPesaNetPantalla
         {
             get { return Bienvenido._seleccionando; }
             set { Bienvenido._seleccionando = value; }
+        }
+
+        private static PantallaActualizando _actualizando = new PantallaActualizando();
+
+        public static PantallaActualizando Actualizando
+        {
+            get { return Bienvenido._actualizando; }
+            set { Bienvenido._actualizando = value; }
         }
 
 
@@ -82,14 +90,13 @@ namespace SolucionPesaNetPantalla
             MessageBox.Show(this.Width + "x" + this.Height);
         }
 
-        private void MostrarError(string error, string mensaje)
+        public static void MostrarError(string error, string mensaje)
         {
             Procesando.Error = error;
             Procesando.Mensaje = mensaje;
             Thread.Sleep(3000);
             
             Procesando.Invoke((Action)(() => Procesando.Hide()));
-            tbCodigo.Invoke((Action)(() => tbCodigo.Text = ""));
           
         }
 
@@ -112,7 +119,13 @@ namespace SolucionPesaNetPantalla
             catch (WebException e)
             {
                 MostrarError("Servidor no conectado.", e.Message);
+                tbCodigo.Invoke((Action)(() => tbCodigo.Text = ""));
             }
+        }
+
+        private void Bienvenido_Activated(object sender, EventArgs e)
+        {
+            tbCodigo.Text = "";
         }
     }
 }

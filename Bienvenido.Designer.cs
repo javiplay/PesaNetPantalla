@@ -93,6 +93,7 @@
             this.Name = "Bienvenido";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.Bienvenido_Activated);
             this.ResumeLayout(false);
 
         }
