@@ -70,6 +70,26 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
             object[] results = this.EndInvoke(asyncResult);
             return ((RespuestaDeIniciarProceso)(results[0]));
         }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("ServiciosPesaNET/IServiciosDePantalla/ActualizarProceso", RequestNamespace="ServiciosPesaNET", ResponseNamespace="ServiciosPesaNET", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public RespuestaDeActualizarProceso ActualizarProceso(PeticionParaActualizarProceso peticion) {
+            object[] results = this.Invoke("ActualizarProceso", new object[] {
+                        peticion});
+            return ((RespuestaDeActualizarProceso)(results[0]));
+        }
+        
+        /// <remarks/>
+        public System.IAsyncResult BeginActualizarProceso(PeticionParaActualizarProceso peticion, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("ActualizarProceso", new object[] {
+                        peticion}, callback, asyncState);
+        }
+        
+        /// <remarks/>
+        public RespuestaDeActualizarProceso EndActualizarProceso(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((RespuestaDeActualizarProceso)(results[0]));
+        }
     }
     
     /// <remarks/>
@@ -78,9 +98,21 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ServiciosPesaNET")]
     public partial class PeticionParaComprobarProductor {
         
+        private int lineaField;
+        
         private System.Nullable<int> codigoField;
         
         private System.Nullable<int> tagField;
+        
+        /// <remarks/>
+        public int Linea {
+            get {
+                return this.lineaField;
+            }
+            set {
+                this.lineaField = value;
+            }
+        }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
@@ -101,6 +133,88 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
             }
             set {
                 this.tagField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="ServiciosPesaNET")]
+    public partial class TimeSpan {
+    }
+    
+    /// <remarks/>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="ServiciosPesaNET")]
+    public partial class RespuestaDeActualizarProceso {
+        
+        private bool finalizadoField;
+        
+        private double parcialField;
+        
+        private double totalField;
+        
+        private TimeSpan duracionField;
+        
+        /// <remarks/>
+        public bool Finalizado {
+            get {
+                return this.finalizadoField;
+            }
+            set {
+                this.finalizadoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Parcial {
+            get {
+                return this.parcialField;
+            }
+            set {
+                this.parcialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Total {
+            get {
+                return this.totalField;
+            }
+            set {
+                this.totalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public TimeSpan Duracion {
+            get {
+                return this.duracionField;
+            }
+            set {
+                this.duracionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="ServiciosPesaNET")]
+    public partial class PeticionParaActualizarProceso {
+        
+        private int lineaField;
+        
+        /// <remarks/>
+        public int Linea {
+            get {
+                return this.lineaField;
+            }
+            set {
+                this.lineaField = value;
             }
         }
     }
@@ -137,6 +251,10 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
         private VehiculoWCF vehiculoField;
         
         private MedianeriaWCF medianeriaField;
+        
+        private CalidadWCF calidadField;
+        
+        private VariedadWCF variedadField;
         
         private int lineaField;
         
@@ -177,6 +295,26 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
             }
             set {
                 this.medianeriaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public CalidadWCF Calidad {
+            get {
+                return this.calidadField;
+            }
+            set {
+                this.calidadField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public VariedadWCF Variedad {
+            get {
+                return this.variedadField;
+            }
+            set {
+                this.variedadField = value;
             }
         }
         
@@ -510,6 +648,94 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ServiciosPesaNET")]
+    public partial class CalidadWCF {
+        
+        private System.Nullable<int> idField;
+        
+        private string nombreField;
+        
+        private string mostrarField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Nombre {
+            get {
+                return this.nombreField;
+            }
+            set {
+                this.nombreField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Mostrar {
+            get {
+                return this.mostrarField;
+            }
+            set {
+                this.mostrarField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="ServiciosPesaNET")]
+    public partial class VariedadWCF {
+        
+        private System.Nullable<int> idField;
+        
+        private string nombreField;
+        
+        private string mostrarField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<int> Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Nombre {
+            get {
+                return this.nombreField;
+            }
+            set {
+                this.nombreField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Mostrar {
+            get {
+                return this.mostrarField;
+            }
+            set {
+                this.mostrarField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="ServiciosPesaNET")]
     public partial class RespuestaDeComprobarProductor {
         
         private bool existeField;
@@ -521,6 +747,10 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
         private MedianeriaWCF[] medianeriasField;
         
         private VehiculoWCF[] vehiculosField;
+        
+        private CalidadWCF[] calidadesField;
+        
+        private VariedadWCF[] variedadesField;
         
         /// <remarks/>
         public bool Existe {
@@ -569,6 +799,26 @@ namespace SolucionPesaNetPantalla.ServiciosPesaNET {
             }
             set {
                 this.vehiculosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public CalidadWCF[] Calidades {
+            get {
+                return this.calidadesField;
+            }
+            set {
+                this.calidadesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public VariedadWCF[] Variedades {
+            get {
+                return this.variedadesField;
+            }
+            set {
+                this.variedadesField = value;
             }
         }
     }

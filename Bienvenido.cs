@@ -15,6 +15,8 @@ namespace SolucionPesaNetPantalla
     public partial class Bienvenido : Form
     {
         public static ServiciosDePantalla servicios = new ServiciosDePantalla() { Url = "http://192.168.89.100:8000/ServiciosPesaNET" };
+        
+        
         private static PantallaProcesando _procesando = new PantallaProcesando();
 
         public static PantallaProcesando Procesando
@@ -22,6 +24,7 @@ namespace SolucionPesaNetPantalla
             get { return Bienvenido._procesando; }
             set { Bienvenido._procesando = value; }
         }
+
         private static PantallaSeleccion _seleccionando = new PantallaSeleccion();
 
         public static PantallaSeleccion Seleccionando
@@ -38,6 +41,13 @@ namespace SolucionPesaNetPantalla
             set { Bienvenido._actualizando = value; }
         }
 
+        private static PantallaFinal _final = new PantallaFinal();
+
+        public static PantallaFinal Final
+        {
+            get { return Bienvenido._final; }
+            set { Bienvenido._final = value; }
+        }
 
         public Bienvenido()
         {
@@ -64,12 +74,19 @@ namespace SolucionPesaNetPantalla
                         }
                         break;
 
-                    case "Entrar":                       
-                        PeticionParaComprobarProductor peticion = new PeticionParaComprobarProductor() { Codigo = int.Parse(tbCodigo.Text) };
-                        Procesando.Limpiar();
-                        Procesando.Show();
-                        AsyncCallback callback = new AsyncCallback(CallbackComprobarProductor);
-                        IAsyncResult ar = servicios.BeginComprobarProductor(peticion, callback, null);                     
+                    case "Entrar":
+                        try
+                        {
+                            PeticionParaComprobarProductor peticion = new PeticionParaComprobarProductor() { Codigo = int.Parse(tbCodigo.Text), Linea = 1 };
+                            Procesando.Limpiar();
+                            Procesando.Show();
+                            AsyncCallback callback = new AsyncCallback(CallbackComprobarProductor);
+                            IAsyncResult ar = servicios.BeginComprobarProductor(peticion, callback, null);
+                        }
+                        catch
+                        {
+                        }
+                                             
                         break;
 
 

@@ -43,6 +43,21 @@ namespace SolucionPesaNetPantalla
             set { _vehiculo = value; }
         }
 
+        CalidadWCF _calidad;
+
+        public CalidadWCF Calidad
+        {
+            get { return _calidad; }
+            set { _calidad = value; }
+        }
+
+        VariedadWCF _variedad;
+
+        public VariedadWCF Variedad
+        {
+            get { return _variedad; }
+            set { _variedad = value; }
+        }
 
         public PantallaConfirmarDatos()
         {
@@ -67,7 +82,11 @@ namespace SolucionPesaNetPantalla
             {
                 listMedianeros.Visible = false;
             }
+            lbCalidad.Text = Calidad.Mostrar;
+            lbVariedad.Text = Variedad.Mostrar;
             
         }
+
+      
     }
 }

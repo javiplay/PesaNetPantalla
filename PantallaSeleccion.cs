@@ -44,6 +44,14 @@ namespace SolucionPesaNetPantalla
             cbVehiculo.DisplayMember = "Mostrar";
             cbVehiculo.ValueMember = "Id";
 
+            cbCalidad.DataSource = Datos.Calidades;
+            cbCalidad.DisplayMember = "Mostrar";
+            cbCalidad.ValueMember = "Id";
+
+            cbVariedad.DataSource = Datos.Variedades;
+            cbVariedad.DisplayMember = "Mostrar";
+            cbVariedad.ValueMember = "Id";
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -67,6 +75,8 @@ namespace SolucionPesaNetPantalla
             confirmaDatos.Plantacion = cbPlantacion.SelectedItem as PlantacionWCF;
             confirmaDatos.Medianeria = cbMedianeria.SelectedItem as MedianeriaWCF;
             confirmaDatos.Vehiculo = cbVehiculo.SelectedItem as VehiculoWCF;
+            confirmaDatos.Calidad = cbCalidad.SelectedItem as CalidadWCF;
+            confirmaDatos.Variedad = cbVariedad.SelectedItem as VariedadWCF;
 
             // se muestra la confirmación como diálogo
             confirmaDatos.ShowDialog();
@@ -80,7 +90,9 @@ namespace SolucionPesaNetPantalla
                  Productor = confirmaDatos.Productor,
                  Plantacion = confirmaDatos.Plantacion, 
                  Medianeria = (confirmaDatos.Medianeria.Id == -1)? null: confirmaDatos.Medianeria,
-                 Vehiculo = (confirmaDatos.Vehiculo.Id == -1)? null: confirmaDatos.Vehiculo
+                 Vehiculo = (confirmaDatos.Vehiculo.Id == -1)? null: confirmaDatos.Vehiculo,
+                 Calidad = confirmaDatos.Calidad,
+                 Variedad = confirmaDatos.Variedad
                 };
 
                 Bienvenido.Procesando.Limpiar();
@@ -99,6 +111,7 @@ namespace SolucionPesaNetPantalla
                 RespuestaDeIniciarProceso respuesta = Bienvenido.servicios.EndIniciarProceso(ar);
                 if (respuesta.ProcesoIniciado)
                 {
+                    Bienvenido.Actualizando.Invoke((Action) ( () => Bienvenido.Actualizando.timer1.Enabled = true));
                     Bienvenido.Actualizando.Invoke((Action)(() => Bienvenido.Actualizando.Show()));
                     Bienvenido.Procesando.Invoke((Action)(() => Bienvenido.Procesando.Hide()));
                 }

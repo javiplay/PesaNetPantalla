@@ -9,6 +9,7 @@
   </xs:element>
   <xs:complexType name="PeticionParaComprobarProductor">
     <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Linea" type="xs:int" />
       <xs:element minOccurs="1" maxOccurs="1" name="Codigo" nillable="true" type="xs:int" />
       <xs:element minOccurs="1" maxOccurs="1" name="Tag" nillable="true" type="xs:int" />
     </xs:sequence>
@@ -27,6 +28,8 @@
       <xs:element minOccurs="0" maxOccurs="1" name="Plantaciones" type="tns:ArrayOfPlantacionWCF" />
       <xs:element minOccurs="0" maxOccurs="1" name="Medianerias" type="tns:ArrayOfMedianeriaWCF" />
       <xs:element minOccurs="0" maxOccurs="1" name="Vehiculos" type="tns:ArrayOfVehiculoWCF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Calidades" type="tns:ArrayOfCalidadWCF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Variedades" type="tns:ArrayOfVariedadWCF" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="ProductorWCF">
@@ -92,6 +95,30 @@
       <xs:element minOccurs="0" maxOccurs="1" name="Mostrar" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="ArrayOfCalidadWCF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalidadWCF" nillable="true" type="tns:CalidadWCF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CalidadWCF">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Mostrar" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfVariedadWCF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VariedadWCF" nillable="true" type="tns:VariedadWCF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VariedadWCF">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Mostrar" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:element name="IniciarProceso">
     <xs:complexType>
       <xs:sequence>
@@ -105,6 +132,8 @@
       <xs:element minOccurs="0" maxOccurs="1" name="Plantacion" type="tns:PlantacionWCF" />
       <xs:element minOccurs="0" maxOccurs="1" name="Vehiculo" type="tns:VehiculoWCF" />
       <xs:element minOccurs="0" maxOccurs="1" name="Medianeria" type="tns:MedianeriaWCF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Calidad" type="tns:CalidadWCF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Variedad" type="tns:VariedadWCF" />
       <xs:element minOccurs="1" maxOccurs="1" name="Linea" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
@@ -120,4 +149,32 @@
       <xs:element minOccurs="1" maxOccurs="1" name="ProcesoIniciado" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
+  <xs:element name="ActualizarProceso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="peticion" type="tns:PeticionParaActualizarProceso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PeticionParaActualizarProceso">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Linea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActualizarProcesoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActualizarProcesoResult" type="tns:RespuestaDeActualizarProceso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RespuestaDeActualizarProceso">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Finalizado" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Parcial" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Total" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Duracion" nillable="true" type="tns:TimeSpan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimeSpan" />
 </xs:schema>

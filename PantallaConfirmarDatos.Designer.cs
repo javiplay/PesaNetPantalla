@@ -40,6 +40,10 @@
             this.lbVehiculo = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lbVariedad = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbCalidad = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -62,7 +66,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(59, 197);
+            this.label3.Location = new System.Drawing.Point(59, 236);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 33);
             this.label3.Text = "Medianería:";
@@ -94,7 +98,7 @@
             // lbMedianeria
             // 
             this.lbMedianeria.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular);
-            this.lbMedianeria.Location = new System.Drawing.Point(215, 197);
+            this.lbMedianeria.Location = new System.Drawing.Point(215, 230);
             this.lbMedianeria.Name = "lbMedianeria";
             this.lbMedianeria.Size = new System.Drawing.Size(526, 33);
             this.lbMedianeria.Text = "...";
@@ -102,7 +106,7 @@
             // listMedianeros
             // 
             this.listMedianeros.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Regular);
-            this.listMedianeros.Location = new System.Drawing.Point(102, 227);
+            this.listMedianeros.Location = new System.Drawing.Point(102, 266);
             this.listMedianeros.Name = "listMedianeros";
             this.listMedianeros.Size = new System.Drawing.Size(639, 140);
             this.listMedianeros.TabIndex = 12;
@@ -143,6 +147,38 @@
             this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             // 
+            // lbVariedad
+            // 
+            this.lbVariedad.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular);
+            this.lbVariedad.Location = new System.Drawing.Point(215, 197);
+            this.lbVariedad.Name = "lbVariedad";
+            this.lbVariedad.Size = new System.Drawing.Size(225, 33);
+            this.lbVariedad.Text = "...";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(59, 197);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(157, 33);
+            this.label7.Text = "Variedad:";
+            // 
+            // lbCalidad
+            // 
+            this.lbCalidad.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular);
+            this.lbCalidad.Location = new System.Drawing.Point(570, 197);
+            this.lbCalidad.Name = "lbCalidad";
+            this.lbCalidad.Size = new System.Drawing.Size(171, 33);
+            this.lbCalidad.Text = "...";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(446, 197);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 33);
+            this.label9.Text = "Calidad:";
+            // 
             // PantallaConfirmarDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -150,6 +186,10 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(798, 575);
+            this.Controls.Add(this.lbCalidad);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lbVariedad);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lbVehiculo);
@@ -185,5 +225,9 @@
         private System.Windows.Forms.Label lbVehiculo;
         public System.Windows.Forms.Button btnAceptar;
         public System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lbVariedad;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbCalidad;
+        private System.Windows.Forms.Label label9;
     }
 }

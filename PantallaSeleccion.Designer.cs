@@ -38,6 +38,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnContinuar = new System.Windows.Forms.Button();
+            this.cbVariedad = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbCalidad = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,56 +59,56 @@
             this.lbProductor.ForeColor = System.Drawing.Color.Black;
             this.lbProductor.Location = new System.Drawing.Point(276, 40);
             this.lbProductor.Name = "lbProductor";
-            this.lbProductor.Size = new System.Drawing.Size(195, 45);
+            this.lbProductor.Size = new System.Drawing.Size(475, 45);
             this.lbProductor.Text = "Bienvenido";
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Arial", 22F, System.Drawing.FontStyle.Regular);
-            this.label2.Location = new System.Drawing.Point(47, 117);
+            this.label2.Location = new System.Drawing.Point(47, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(329, 32);
-            this.label2.Text = "Seleccione el cultivo";
+            this.label2.Size = new System.Drawing.Size(112, 32);
+            this.label2.Text = "Cultivo:";
             // 
             // cbPlantacion
             // 
             this.cbPlantacion.Font = new System.Drawing.Font("Arial", 28F, System.Drawing.FontStyle.Regular);
-            this.cbPlantacion.Location = new System.Drawing.Point(47, 152);
+            this.cbPlantacion.Location = new System.Drawing.Point(225, 96);
             this.cbPlantacion.Name = "cbPlantacion";
-            this.cbPlantacion.Size = new System.Drawing.Size(704, 49);
+            this.cbPlantacion.Size = new System.Drawing.Size(526, 49);
             this.cbPlantacion.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Arial", 22F, System.Drawing.FontStyle.Regular);
-            this.label3.Location = new System.Drawing.Point(47, 225);
+            this.label3.Location = new System.Drawing.Point(47, 164);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(329, 32);
-            this.label3.Text = "Seleccione medianería";
+            this.label3.Size = new System.Drawing.Size(172, 32);
+            this.label3.Text = "Medianería:";
             // 
             // cbMedianeria
             // 
             this.cbMedianeria.Font = new System.Drawing.Font("Arial", 28F, System.Drawing.FontStyle.Regular);
-            this.cbMedianeria.Location = new System.Drawing.Point(47, 260);
+            this.cbMedianeria.Location = new System.Drawing.Point(225, 164);
             this.cbMedianeria.Name = "cbMedianeria";
-            this.cbMedianeria.Size = new System.Drawing.Size(704, 49);
+            this.cbMedianeria.Size = new System.Drawing.Size(526, 49);
             this.cbMedianeria.TabIndex = 7;
             // 
             // cbVehiculo
             // 
             this.cbVehiculo.Font = new System.Drawing.Font("Arial", 28F, System.Drawing.FontStyle.Regular);
-            this.cbVehiculo.Location = new System.Drawing.Point(47, 376);
+            this.cbVehiculo.Location = new System.Drawing.Point(225, 234);
             this.cbVehiculo.Name = "cbVehiculo";
-            this.cbVehiculo.Size = new System.Drawing.Size(704, 49);
+            this.cbVehiculo.Size = new System.Drawing.Size(526, 49);
             this.cbVehiculo.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Arial", 22F, System.Drawing.FontStyle.Regular);
-            this.label4.Location = new System.Drawing.Point(47, 341);
+            this.label4.Location = new System.Drawing.Point(47, 234);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(329, 32);
-            this.label4.Text = "Seleccione vehículo";
+            this.label4.Size = new System.Drawing.Size(144, 32);
+            this.label4.Text = "Vehículo:";
             // 
             // btnCancelar
             // 
@@ -126,6 +130,38 @@
             this.btnContinuar.Text = "Continuar";
             this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
+            // cbVariedad
+            // 
+            this.cbVariedad.Font = new System.Drawing.Font("Arial", 28F, System.Drawing.FontStyle.Regular);
+            this.cbVariedad.Location = new System.Drawing.Point(225, 305);
+            this.cbVariedad.Name = "cbVariedad";
+            this.cbVariedad.Size = new System.Drawing.Size(526, 49);
+            this.cbVariedad.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Arial", 22F, System.Drawing.FontStyle.Regular);
+            this.label5.Location = new System.Drawing.Point(47, 305);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(172, 32);
+            this.label5.Text = "Variedad:";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Arial", 22F, System.Drawing.FontStyle.Regular);
+            this.label6.Location = new System.Drawing.Point(47, 373);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(172, 32);
+            this.label6.Text = "Calidad:";
+            // 
+            // cbCalidad
+            // 
+            this.cbCalidad.Font = new System.Drawing.Font("Arial", 28F, System.Drawing.FontStyle.Regular);
+            this.cbCalidad.Location = new System.Drawing.Point(225, 373);
+            this.cbCalidad.Name = "cbCalidad";
+            this.cbCalidad.Size = new System.Drawing.Size(526, 49);
+            this.cbCalidad.TabIndex = 32;
+            // 
             // PantallaSeleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -133,6 +169,10 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(798, 575);
+            this.Controls.Add(this.cbCalidad);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbVariedad);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.cbVehiculo);
@@ -164,5 +204,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnContinuar;
+        private System.Windows.Forms.ComboBox cbVariedad;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbCalidad;
     }
 }

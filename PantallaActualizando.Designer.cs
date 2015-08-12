@@ -35,6 +35,7 @@
             this.lbTotal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbDuracion = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer();
             this.SuspendLayout();
             // 
             // label1
@@ -100,6 +101,11 @@
             this.lbDuracion.Size = new System.Drawing.Size(226, 45);
             this.lbDuracion.Text = "...";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 3000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // PantallaActualizando
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -130,5 +136,6 @@
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbDuracion;
+        public System.Windows.Forms.Timer timer1;
     }
 }
